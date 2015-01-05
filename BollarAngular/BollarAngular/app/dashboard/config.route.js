@@ -20,14 +20,8 @@
                 options: {
                     url: '/dashboard',
                     templateUrl: 'app/dashboard/dashboard.html',
-                    //item: '<a href class="auto" ui-sref="app.dashboard"> ' +
-                    //    '<span class="pull-right text-muted">' +
-                    //    ' <i class="fa fa-fw fa-angle-right text"></i>' +
-                    //    '<i class="fa fa-fw fa-angle-down text-active"></i>' +
-                    //    '</span>' +
-                    //    '<i class="glyphicon glyphicon-stats icon text-primary-dker"></i>' +
-                    //    '<span class="font-bold" translate="aside.nav.DASHBOARD">Dashboard</span>' +
-                    //    '</a>',
+                    category: 'Navigation',
+                    // item:
                     itemTemplate:'app/dashboard/item.html',
                     resolve: {
                         deps: [
@@ -38,7 +32,27 @@
                         ]
                     }
                 }
-            }
+            },
+               {
+                   state: 'app.dashboard.v1',
+
+                   options: {
+                       url: '/dashboard',
+                       templateUrl: 'app/dashboard/dashboard.html',
+                       parentState: 'app.dashboard',
+                       category: 'Navigation',
+                       // item:
+                       item: '<a ui-sref="app.dashboard" > <span translate="Dashboard">Dashboard</span></a>',
+                       resolve: {
+                           deps: [
+                               '$ocLazyLoad',
+                               function ($ocLazyLoad) {
+                                   return $ocLazyLoad.load(['js/controllers/chart.js']);
+                               }
+                           ]
+                       }
+                   }
+               }
         ];
     }
 

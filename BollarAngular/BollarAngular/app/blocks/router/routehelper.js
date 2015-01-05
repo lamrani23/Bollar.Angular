@@ -35,6 +35,7 @@
             errors: 0,
             changes: 0
         };
+        var categories = [];
         var routes = [];
         //var $routeProvider = routehelperConfig.config.$routeProvider;
 
@@ -45,28 +46,69 @@
             $urlRouterProvider: $urlRouterProvider,
             $stateParams: $stateParams,
             $state: $state,
-            all:all,
-            routeCounts: routeCounts
+            all: all,
+            categories:categories,
+            routeCounts: routeCounts,
+            items: items,
         };
 
         init();
-
+       
         return service;
         ///////////////
 
         function all() {
-           return _($state.get()).reject({ abstract: true });
+            var states = _($state.get()).chain().reject({ abstract: true }).reject({ templateOnly: true });
+            return _(states).map(function (state) {
+                state.sub = _(states).where({ parentState: state.name }).value();
+
+                return state;
+            }).reject(function(e) {
+                return e.parentState != null;
+            }).value();
         }
-        function configureRoutes(routes) {
-            routes.forEach(function (route) {
+
+        function items() {
+            var states = all();
+            var result = [];
+            // add whiout catégorie
+            _(states).chain().reject(function(e){return e.category != null}).each(function (state) {
+                result.push(state);
+            });
+
+
+            _(categories).each(function (e) {
+                // add category
+                if (!_(result).contains(e)) {
+                    result.push(e);
+                }
+                // add items
+                _(states).chain().where({ category: e }).each(function (state) {
+                    result.push(state);
+                });
+            });
+
+            return result;
+
+        }
+        function configureRoutes(uiRoutes) {
+            uiRoutes.forEach(function (route) {
                 $stateProvider
                     .state(route.state, route.options);
+                addRoute(route);
                 //route.config.resolve =
                 //    angular.extend(route.config.resolve || {}, routehelperConfig.config.resolveAlways);
                 //$routeProvider.when(route.url, route.config);
 
             });
             //$routeProvider.otherwise({redirectTo: '/'});
+        }
+
+        function addRoute(route) {
+            if (!_(categories).contains(route.options.category)) {
+                categories.push(route.options.category);
+            }
+            
         }
 
         function handleRoutingErrors() {

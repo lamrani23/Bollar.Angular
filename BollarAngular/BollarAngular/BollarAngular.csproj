@@ -61,6 +61,12 @@
     <Content Include="angular-stripped.html" />
     <Content Include="api\login" />
     <Content Include="api\signup" />
+    <Content Include="app\core\directives.js" />
+    <Content Include="app\email\config.route.js" />
+    <Content Include="app\email\dashboard.html" />
+    <Content Include="app\email\dashboard.js" />
+    <Content Include="app\email\email.module.js" />
+    <Content Include="app\email\item.html" />
     <Content Include="app\layout\header\header.data.json" />
     <Content Include="app\layout\header\notification.data.json" />
     <Content Include="app\layout\header\search.data.json" />
@@ -149,15 +155,6 @@
     <Content Include="app\dashboard\dashboard.js" />
     <Content Include="app\dashboard\dashboard.module.js" />
     <Content Include="app\dashboard\item.html" />
-    <Content Include="app\layout2\app.html" />
-    <Content Include="app\layout2\aside.html" />
-    <Content Include="app\layout2\layout.module.js" />
-    <Content Include="app\layout2\main.js" />
-    <Content Include="app\layout2\shell.html" />
-    <Content Include="app\layout2\shell.js" />
-    <Content Include="app\layout2\sidebar.html" />
-    <Content Include="app\layout2\sidebar.js" />
-    <Content Include="app\layout2\topnav.html" />
     <Content Include="app\layout\app.html" />
     <Content Include="app\layout\aside.html" />
     <Content Include="app\layout\blocks\page_footer.html" />
@@ -457,7 +454,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="app\layout2\parts\" />
     <Folder Include="js\controllers\uploads\" />
   </ItemGroup>
   <PropertyGroup>

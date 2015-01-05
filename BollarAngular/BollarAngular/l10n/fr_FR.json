@@ -1,11 +1,12 @@
-{
+﻿{
     "PROFILE": "Profile",
     "YOU_HAVE_NOTIFICATION": "Vous avez {{value}} notification(s)",
     "SEE_ALL_THE_NOTIFICATION": "Voir toutes les notifications",
     "English": "Anglais",
     "German": "Allemend",
     "Italian": "Italien",
-    "French": "Fran�ais",
+    "French": "Français",
+    "Dashboard": "Tableau de bord",
 
     "header": {
         "navbar": {

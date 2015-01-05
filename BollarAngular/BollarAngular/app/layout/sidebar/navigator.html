@@ -1,13 +1,27 @@
 <!-- list -->
 <ul class="nav" ng-controller="Navigator as vm">
-  <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
-    <span translate="aside.nav.HEADER">Navigation</span>
-  </li>
-  <li ng-repeat="route in vm.routes" ui-sref-active="active">
-      <span ng-if="route.item" ng-bind-html="route.item"></span>
-      <span ng-if="route.itemTemplate" ng-include="route.itemTemplate"></span>
-   
-  </li>
- 
+    <!--<li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
+        <span translate="aside.nav.HEADER">Navigation</span>
+    </li>-->
+    <li ng-repeat="route in vm.routes" ui-sref-active="active" data-ng-class="{ 'hidden-folded padder m-t m-b-sm text-muted text-xs': vm.isCategory(route)  }">
+
+        <span ng-if="vm.isCategory(route)" translate="{{route}}">{{route}}</span>
+        <span ng-if="route.item" ng-bind-html="route.item"></span>
+
+        <span ng-if="route.itemTemplate" cc-include="route.itemTemplate"></span>
+        <ul class="nav nav-sub dk">
+            <li class="nav-sub-header">
+                <a href>
+                    <span translate="Dashboard">Dashboard</span>
+                </a>
+            </li>
+            <li ui-sref-active="active" ng-repeat="sitem in route.sub">
+                <span ng-if="sitem.item" ng-bind-html="sitem.item"></span>
+                <span ng-if="sitem.itemTemplate" ng-include="sitem.itemTemplate"></span>
+            </li>
+
+        </ul>
+    </li>
+
 </ul>
 <!-- / list -->

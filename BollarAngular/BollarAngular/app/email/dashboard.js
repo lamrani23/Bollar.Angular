@@ -1,18 +1,18 @@
-﻿(function() {
+(function() {
     'use strict';
 
     angular
-        .module('app.layout')
-        .controller('Navigator', Navigator);
+        .module('app.dashboard')
+        .controller('Dashboard', Dashboard);
 
-//    Navigator.$inject = ['$q', 'logger'];
-
-/* @ngInject */
-    function Navigator($q, logger,routehelper) {
+    Dashboard.$inject = ['$q', 'dataservice', 'logger'];
+    /* @ngInject */
+    function Dashboard($q, dataservice, logger) {
 
         /*jshint validthis: true */
         var vm = this;
-        vm.routes = routehelper.items();
+
+      
 
         activate();
 
@@ -21,15 +21,10 @@
 //            Using a resolver on all routes or dataservice.ready in every controller
 //            return dataservice.ready(promises).then(function(){
             return $q.all(promises).then(function() {
-                logger.info('Activated Navigator View');
+                logger.info('Activated Dashboard View');
             });
         }
 
-        vm.isCategory = function (route) {
-            return angular.isString(route);
-        }
-
-
+      
     }
-
 })();
