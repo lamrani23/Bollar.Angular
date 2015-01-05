@@ -1,0 +1,76 @@
+﻿[
+    {
+        "title": "Mega",
+        "style": "columns",
+        "sections": [
+            {
+                "title": "Pages",
+                "badge": "10",
+                "columncount": "2",
+                "badgestyle": "badge badge-sm bg-success",
+                "items": [
+                    { "name": "Profile", "translate": "PROFILE" },
+                    { "name": "Post" },
+                    { "name": "Search" },
+                    { "name": "Invoice" },
+                    { "name": "Price" },
+                    { "name": "Lock screen" },
+                    { "name": "Sign in" },
+                    { "name": "Sign up" }
+
+
+                ]
+            },
+            {
+                "title": "UI Kits",
+                "badge": "12",
+                "columncount": "2",
+                "badgestyle": "label label-sm bg-primary",
+                "items": [
+                    { "name": "Profile" },
+                    { "name": "Post" },
+                    { "name": "Search" },
+                    { "name": "Invoice", "badge": "1000+", "badgestyle": "badge badge-sm bg-warning" },
+                    { "name": "Price" },
+                    { "name": "Lock screen" },
+                    { "name": "Sign in" },
+                    { "name": "Sign up" }
+
+
+                ]
+            },
+
+            {
+                "title": "Analisis",
+                "badge": "12",
+                "columncount": "2",
+                "badgestyle": "label label-sm bg-primary",
+                "graph": {
+                    "type": "easyPieChart",
+                    "options": {
+                        "percent": 65,
+                        "lineWidth": 50,
+                        "trackColor": "#EEE",
+                        "barColor": "#FFF",
+                        "scaleColor": false,
+                        "size": 100,
+                        "rotate": 90,
+                        "lineCap": "butt",
+                        "animate": 2000
+                    }
+                }
+            }
+        ]
+    },
+    {
+        "title": "New",
+        "style": "dropdown",
+        "items": [ 
+                    {"name": "Projects", "translate":"header.navbar.new.PROJECT"},
+                    {"name": "TASK", "translate":"header.navbar.new.TASK", "badge": 20 ,"badgestyle": "bg-danger"},
+                    {"name": "USER", "translate":"header.navbar.new.USER"},
+                    {"divider" : true},
+                    { "name": "EMAIL", "translate": "header.navbar.new.EMAIL" ,"badge": 50 }                
+                ]
+    }
+]

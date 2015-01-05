@@ -1,0 +1,13 @@
+<!-- list -->
+<ul class="nav" ng-controller="Navigator as vm">
+  <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
+    <span translate="aside.nav.HEADER">Navigation</span>
+  </li>
+  <li ng-repeat="route in vm.routes" ui-sref-active="active">
+      <span ng-if="route.item" ng-bind-html="route.item"></span>
+      <span ng-if="route.itemTemplate" ng-include="route.itemTemplate"></span>
+   
+  </li>
+ 
+</ul>
+<!-- / list -->

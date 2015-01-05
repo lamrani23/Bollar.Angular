@@ -1,0 +1,48 @@
+{
+  "client": "./",
+  "server": "./server/",
+  "api": "/api",
+  "data": "./data/",
+  "test": "./test/",
+  "html": "./**/*.html",
+  "htmltemplates": "./app/**/*.html",
+  "vendorjs": [
+    "./bower_components/jquery/dist/jquery.min.js",
+    "./bower_components/angular/angular.min.js",
+    "./bower_components/angular-animate/angular-animate.min.js",
+    "./bower_components/angular-route/angular-route.min.js",
+    "./bower_components/angular-sanitize/angular-sanitize.min.js",
+    "./bower_components/bootstrap/dist/js/bootstrap.min.js",
+    "./bower_components/toastr/toastr.min.js",
+    "./bower_components/moment/min/moment.min.js",
+    "./bower_components/extras.angular.plus/ngplus-overlay.js"
+  ],
+  "vendorcss": [
+    "./bower_components/bootstrap/dist/css/bootstrap.min.css",
+    "./bower_components/font-awesome/css/font-awesome.min.css",
+    "./bower_components/toastr/toastr.css"
+  ],
+  "css": [
+    "./src/client/content/customtheme.css",
+    "./src/client/content/styles.css"
+  ],
+  "js": [
+    "./app/**/*module*.js",
+    "./app/**/*.js",
+    "!./app/**/*-spaghetti.js"
+  ],
+  "specs": [
+    "./specs/*.spec.js"
+  ],
+  "nodejs": [
+    "./server/**/*.js"
+  ],
+  "fonts": [
+    "./bower_components/font-awesome/fonts/**/*.*"
+  ],
+  "images": [
+    "./img/**/*"
+  ],
+  "report": "./report/",
+  "build": "./build/"
+}
